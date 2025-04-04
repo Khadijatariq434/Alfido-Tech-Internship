@@ -1,0 +1,155 @@
+/* Improved CSS */
+:root {
+    --primary-color: #6c63ff;
+    --secondary-color: #4d44db;
+    --text-color: #2d3748;
+    --light-text: #718096;
+    --bg-color: #f8fafc;
+    --card-bg: #ffffff;
+  }
+  
+  body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+  }
+  
+  .container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+  }
+  
+  .profile-card {
+    background: var(--card-bg);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+  }
+  
+  .profile-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .profile-header {
+    padding: 30px 20px;
+    text-align: center;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+  }
+  
+  .profile-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid white;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 15px;
+    transition: transform 0.3s ease;
+  }
+  
+  .profile-img:hover {
+    transform: scale(1.05);
+  }
+  
+  h1 {
+    margin: 0;
+    font-size: 2rem;
+    font-weight: 600;
+  }
+  
+  .tagline {
+    margin: 5px 0 0;
+    font-weight: 300;
+    opacity: 0.9;
+  }
+  
+  .profile-content {
+    padding: 30px;
+  }
+  
+  .bio {
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+    color: var(--light-text);
+  }
+  
+  .skills {
+    margin-top: 25px;
+  }
+  
+  .skills h2 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    color: var(--primary-color);
+  }
+  
+  .skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
+  .skill-tags span {
+    background: #e2e8f0;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    color: var(--text-color);
+    transition: all 0.3s ease;
+  }
+  
+  .skill-tags span:hover {
+    background: var(--primary-color);
+    color: white;
+    transform: translateY(-2px);
+  }
+  
+  .social-links {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    background: #f8fafc;
+    border-top: 1px solid #e2e8f0;
+  }
+  
+  .social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin: 0 10px;
+    color: var(--primary-color);
+    background: white;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+  }
+  
+  .social-links a:hover {
+    background: var(--primary-color);
+    color: white;
+    transform: translateY(-3px);
+  }
+  
+  /* Responsive design */
+  @media (max-width: 768px) {
+    .container {
+      padding: 15px;
+      margin: 20px auto;
+    }
+    
+    .profile-content {
+      padding: 20px;
+    }
+    
+    .profile-img {
+      width: 120px;
+      height: 120px;
+    }
+  }
