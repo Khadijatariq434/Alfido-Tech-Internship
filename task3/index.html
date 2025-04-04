@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Random Color Changer</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      transition: background-color 0.5s ease;
+      text-align: center;
+    }
+    
+    .container {
+      background-color: rgba(255, 255, 255, 0.9);
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    h1 {
+      color: #333;
+      margin-bottom: 2rem;
+    }
+    
+    .color-btn {
+      background-color: #6c63ff;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      font-size: 1rem;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    
+    .color-btn:hover {
+      background-color: #5a52d6;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    }
+    
+    .color-btn:active {
+      transform: translateY(0);
+    }
+    
+    .color-code {
+      margin-top: 1.5rem;
+      font-size: 1.2rem;
+      font-weight: bold;
+      padding: 8px 16px;
+      background-color: white;
+      border-radius: 5px;
+      display: inline-block;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Random Background Color Changer</h1>
+    <button class="color-btn" id="colorBtn">Change Color</button>
+    <div class="color-code" id="colorCode">Current color: #FFFFFF</div>
+  </div>
+
+  <script>
+    const colorBtn = document.getElementById('colorBtn');
+    const colorCode = document.getElementById('colorCode');
+    
+    function getRandomColor() {
+      const letters = '0123456789ABCDEF';
+      let color = '#';
+      for (let i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+      }
+      return color;
+    }
+    
+    colorBtn.addEventListener('click', function() {
+      const randomColor = getRandomColor();
+      document.body.style.backgroundColor = randomColor;
+      colorCode.textContent = `Current color: ${randomColor}`;
+      colorCode.style.color = randomColor;
+      
+      colorBtn.style.backgroundColor = randomColor;
+    });
+  </script>
+</body>
+</html>
